@@ -1,0 +1,146 @@
+body {
+  margin: 1px;
+  padding: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width:1000px) {
+  footer {
+    position: static;
+    margin-top: auto;
+  }
+}
+
+p {
+  font-size: 1em;
+}
+
+/* Header Selectors */
+#header-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  margin-bottom: 15px;
+  padding: 15px;
+  justify-items: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+#header-container>img {
+  justify-self: start;
+}
+
+/* Main Selectors */
+#highlight-me {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  #highlight-me {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  border: 2px solid black;
+  border-radius: 25px;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+  margin: 15px;
+  min-width: 350px;
+  height: 500px;
+}
+
+
+/* Footer Selectors */
+#column-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  border: 2px solid black;
+  margin-top: 15px;
+}
+
+@media screen and (max-width:768px) {
+  #column-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.column {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 2px;
+  padding: 2px;
+}
+
+#highlight-product {
+  transition: transform 0.3s ease;
+}
+
+#highlight-product:hover {
+  transform: scale(1.1)
+}
+
+#about-me {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#about-me.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.trigger-area {
+  width: auto;
+  /* Adjust as needed */
+  height: auto;
+  /* Adjust as needed */
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.trigger-area:hover #about-me {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#about-me {
+  margin: 0;
+}
+
+#header-container {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#header-container:hover {
+  opacity: 1;
+}
